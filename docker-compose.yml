@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sermi-store-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3020:80"
