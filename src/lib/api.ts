@@ -127,6 +127,6 @@ export async function fetchCategories(): Promise<string[]> {
     const categories = Array.from(new Set(products.map((p) => p.category).filter(Boolean)));
     return categories;
   } catch {
-    return ["Sơ mi", "Polo", "Thun", "Quần", "Khoác"];
+    return ["Sơ mi nam", "Sơ mi nữ", "Sơ mi unisex"];
   }
 }

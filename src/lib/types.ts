@@ -9,11 +9,14 @@ export interface ProductVariant {
   status: string;
 }
 
+export type Gender = "Nam" | "Nữ" | "Unisex";
+
 export interface Product {
   id: string;
   sku: string;
   name: string;
   category: string;
+  gender?: Gender;
   material?: string;
   description?: string;
   basePrice: number;

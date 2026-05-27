@@ -1,0 +1,55 @@
+/*
+ * The Sermi — Payload CMS Admin custom styling
+ * Non-invasive overrides via CSS variables + BEM selectors.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,700&display=swap");
+
+/* Brand color tokens override Payload "success" scale (used as primary accent) */
+:root {
+  --color-success-50:  #EEF2FA;
+  --color-success-100: #DDE5F2;
+  --color-success-150: #BFCDE6;
+  --color-success-200: #A2B6DA;
+  --color-success-250: #859ECE;
+  --color-success-300: #6986C2;
+  --color-success-350: #4D6FB6;
+  --color-success-400: #3357A4;
+  --color-success-450: #264C97;
+  --color-success-500: #1E3A8A;
+  --color-success-550: #1B358A;
+  --color-success-600: #18307D;
+  --color-success-650: #142A6E;
+  --color-success-700: #11245F;
+  --color-success-750: #0F1F50;
+  --color-success-800: #0C1A41;
+  --color-success-850: #091534;
+  --color-success-900: #061027;
+  --color-success-950: #030B1A;
+  --color-success-1000: #01060D;
+}
+
+/* Login page background — brand navy */
+.login {
+  background-color: #1E3A8A;
+}
+
+/* Brand wordmark above login form */
+.login__wrap::before {
+  content: "The Ser.mi";
+  display: block;
+  text-align: center;
+  font-family: "Playfair Display", "DM Serif Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+/* Top nav brand — serif font */
+.nav__brand,
+.app-header__brand {
+  font-family: "Playfair Display", "DM Serif Display", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}

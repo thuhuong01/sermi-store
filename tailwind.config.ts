@@ -39,6 +39,12 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          dark: "hsl(var(--brand-dark))",
+          light: "hsl(var(--brand-light))",
+        },
+        cream: "hsl(var(--cream))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -47,6 +53,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
+        serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
       },
     },
   },
