@@ -9,6 +9,11 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+# Placeholder env vars for build-time module evaluation.
+# Real values are injected at runtime via docker-compose.
+ENV MONGODB_URI=mongodb://placeholder:27017/build
+ENV PAYLOAD_SECRET=build-time-placeholder-secret
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
 FROM base AS runner
