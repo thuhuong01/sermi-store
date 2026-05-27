@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "The Sermi — chuyên sơ mi nam, nữ, unisex và dịch vụ đặt may theo nhóm. Cotton, linen, lụa, chambray — chất liệu chọn lọc, thiết kế tối giản, vừa vặn cho người Việt.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function FrontendLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased min-h-screen flex flex-col">
