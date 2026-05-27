@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState, useEffect } from "react";
+import { Suspense, useMemo, useState, useEffect } from "react";
 import ProductCard from "@/components/product/ProductCard";
 import { PRODUCTS, CATEGORIES } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
@@ -37,6 +37,14 @@ const CATEGORY_BANNERS: Record<string, { eyebrow: string; tagline: string }> = {
 };
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="container py-32 text-center text-muted-foreground">Đang tải...</div>}>
+      <ProductsContent />
+    </Suspense>
+  );
+}
+
+function ProductsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category") || "";
   const searchParamQuery = searchParams.get("search") || "";
