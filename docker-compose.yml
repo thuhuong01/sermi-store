@@ -8,4 +8,23 @@ services:
     container_name: sermi-store-web
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3020:80"
+      - "127.0.0.1:3020:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/sermi-store
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET:-sermi-store-payload-secret-change-me}
+      - NEXT_PUBLIC_API_URL=https://smm.thesermi.com
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    container_name: sermi-store-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "127.0.0.1:27017:27017"
+
+volumes:
+  mongo_data:
